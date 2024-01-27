@@ -57,19 +57,19 @@ pub fn app() -> Html {
     };
 
     html! {
-        <main class="container">
-            <div class="row">
+        <main class="flex flex-col justify-center text-center max-w-[100%] pt-[10vh]">
+            <div class="flex justify-center">
                 <a href="https://tauri.app" target="_blank">
-                    <img src="public/tauri.svg" class="logo tauri" alt="Tauri logo"/>
+                    <img src="public/tauri.svg" class="h-24 p-6 transform duration-700 hover:scale-125" alt="Tauri logo"/>
                 </a>
                 <a href="https://yew.rs" target="_blank">
-                    <img src="public/yew.png" class="logo yew" alt="Yew logo"/>
+                    <img src="public/yew.png" class="h-24 p-6 transform duration-700 hover:scale-125" alt="Yew logo"/>
                 </a>
             </div>
 
-            <p>{"Click on the Tauri and Yew logos to learn more."}</p>
+            <p class="mb-4">{"Click on the Tauri and Yew logos to learn more."}</p>
 
-            <p>
+            <p class="mb-4">
                 {"Recommended IDE setup: "}
                 <a href="https://code.visualstudio.com/" target="_blank">{"VS Code"}</a>
                 {" + "}
@@ -78,12 +78,12 @@ pub fn app() -> Html {
                 <a href="https://github.com/rust-lang/rust-analyzer" target="_blank">{"rust-analyzer"}</a>
             </p>
 
-            <form class="row" onsubmit={greet}>
-                <input id="greet-input" ref={greet_input_ref} placeholder="Enter a name..." />
+            <form class="flex justify-center" onsubmit={greet}>
+                <input id="greet-input" class="mr-2" ref={greet_input_ref} placeholder="Enter a name..." />
                 <button type="submit">{"Greet"}</button>
             </form>
 
-            <p><b>{ &*greet_msg }</b></p>
+            <p class="mt-4"><b>{ &*greet_msg }</b></p>
         </main>
     }
 }
