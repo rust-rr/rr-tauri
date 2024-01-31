@@ -1,5 +1,5 @@
 use search_bar::SearchBar;
-use yew::prelude::*;
+use yew::{function_component, html, Html};
 
 mod classification;
 mod lists;
